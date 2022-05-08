@@ -1,0 +1,10 @@
+.rightIcon {
+	margin: 16px;
+	padding: 16px;
+}
+
+.rightIcon img {
+	margin: 0 8px;
+	width: 48px;
+	height: 48px;
+}

@@ -1,0 +1,1240 @@
+{
+	"info": {
+		"_postman_id": "b7a111a6-3bba-48cb-a8b1-be914c26596e",
+		"name": "moonville",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}test",
+							"host": [
+								"{{host}}{{path}}test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "accounts (not sign-in)",
+			"item": [
+				{
+					"name": "signup: user0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"email\": \"user0@your.diy\",\r\n        \"password\": \"user0\",\r\n        \"confirmPassword\": \"user0\",\r\n        \"locale\": \"en\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}accounts/signup",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup: user1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"email\": \"user1@your.diy\",\r\n        \"password\": \"user1\",\r\n        \"confirmPassword\": \"user1\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}accounts/signup",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup: user2, invalid locale",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"email\": \"user2@your.diy\",\r\n        \"password\": \"user2\",\r\n        \"confirmPassword\": \"user2\",\r\n        \"locale\": \"ex\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}accounts/signup",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirm, copy code to query params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/confirm?code=",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"confirm"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "",
+									"description": "copy 'code' from email here"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request reset: user0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"email\": \"user0@your.diy\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}accounts/request-reset",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"request-reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authen",
+			"item": [
+				{
+					"name": "login: admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": {\r\n        \"email\": \"admin@your.diy\",\r\n        \"password\": \"admin\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/login",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login: user0, user0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": {\r\n        \"email\": \"user0@your.diy\",\r\n        \"password\": \"user0\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/login",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login: user0, 1111",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": {\r\n        \"email\": \"user0@your.diy\",\r\n        \"password\": \"1111\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/login",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login: user0, PASS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": {\r\n        \"email\": \"user0@your.diy\",\r\n        \"password\": \"PASS\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/login",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login: user1, user1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": {\r\n        \"email\": \"user1@your.diy\",\r\n        \"password\": \"user1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/login",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login: user1, 1111",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": {\r\n        \"email\": \"user1@your.diy\",\r\n        \"password\": \"1111\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/login",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login: user1, PASS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": {\r\n        \"email\": \"user1@your.diy\",\r\n        \"password\": \"PASS\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/login",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}authen/logout",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}authen/check",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"check"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "upload icon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/icon",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view icon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}profile/icon",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete icon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}profile/icon",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change name: Jenius",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"name\": \"Jenius\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/name",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change name: Jane",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"name\": \"Jane\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/name",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password: 1111",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/password",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password: PASS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"password\": \"PASS\",\r\n        \"confirmPassword\": \"PASS\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/password",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "settings",
+			"item": [
+				{
+					"name": "change locale: en",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"locale\": \"en\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change locale: th",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change theme: 0",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"theme\": 0\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change theme: 3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"theme\": 3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change settings: en, 0",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"locale\": \"en\",\r\n        \"theme\": 0\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change settings: th, 15",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"locale\": \"th\",\r\n        \"theme\": 15\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change settings: error",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"locale\": \"en\",\r\n        \"theme\": 16\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users?page=0",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list, order by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users?page=0&order=email-",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "order",
+									"value": "email-"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list, order by email, search 'use'",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users?page=0&order=email-&search=use",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "order",
+									"value": "email-"
+								},
+								{
+									"key": "search",
+									"value": "use"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list, order by email, trash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users?page=0&order=email-&trash=1",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "order",
+									"value": "email-"
+								},
+								{
+									"key": "trash",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get, user0@your.diy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "user0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get, a@b.c",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "a@b.c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get, error a@b",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "a@b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get icon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/icon/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								"icon",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get icon, user0@your.diy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/icon/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								"icon",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "user0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get icon, a@b.c",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/icon/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								"icon",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "a@b.c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get icon, error a@b",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/icon/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								"icon",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "a@b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disabled, disabled",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"disabled\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/disable/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								"disable",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "user0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disabled, enabled",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": {\r\n        \"disabled\": false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}accounts/users/disable/:email",
+							"host": [
+								"{{host}}{{path}}accounts"
+							],
+							"path": [
+								"users",
+								"disable",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "user0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,177 @@
+{
+	"app": "Moonville",
+	"switchLocale": {
+		"en": "Change Language to English",
+		"th": "Change Language to ไทย"
+	},
+	"common": {
+		"close": "Close",
+		"ok": "OK",
+		"cancel": "Cancel",
+		"yes": "Yes",
+		"no": "No",
+		"retry": "Retry",
+		"name": "Name",
+		"value": "Value",
+		"create": "Create",
+		"createMore": "Create...",
+		"update": "Save",
+		"updateMore": "Save...",
+		"remove": "Delete",
+		"removeMore": "Delete..."
+	},
+	"question": {
+		"areYouSureToExit": "Are you sure to exit this program?",
+		"areYouSureToDelete": "Are you sure to delete this item?",
+		"areYouSureToLeave": "Are you sure to leave without save data?"
+	},
+	"validator": {
+		"isMinInt": "Please input as integer, minimum >= {{min}}.",
+		"isMaxInt": "Please input as integer, maximum <= {{max}}.",
+		"isPositiveInt": "Please input as positive integer.",
+		"isPositiveOrZeroInt": "Please input as positive integer or zero.",
+		"isNegativeInt": "Please input as negative integer.",
+		"isNegativeOrZeroInt": "Please input as negative integer or zero.",
+		"isMinFloat": "Please input as floating-point, minimum >= {{min}}.",
+		"isMaxFloat": "Please input as floating-point, maximum <= {{max}}.",
+		"isPositiveFloat": "Please input as positive floating-point.",
+		"isPositiveOrZeroFloat": "Please input as positive floating-point or zero.",
+		"isNegativeFloat": "Please input as negative floating-point.",
+		"isNegativeOrZeroFloat": "Please input as negative floating-point or zero.",
+		"isMoney": "Please input as money.",
+		"isMinLength": "Please input length >= {{min}}.",
+		"isMaxLength": "Please input length <= {{max}}.",
+		"isEmail": "Please input as email.",
+		"isSamePasswords": "Password and confirm password must be equal."
+	},
+	"messageBox": {
+		"info": "Information",
+		"warning": "Warning",
+		"error": "Error",
+		"question": "Question"
+	},
+	"waitBox": {
+		"message": "Please wait..."
+	},
+	"serviceRunner": {
+		"message": "Network error!"
+	},
+	"imageChooser": {
+		"upload": "Upload",
+		"reset": "Reset",
+		"revert": "Revert"
+	},
+	"searchBar": {
+		"open": "Open search...",
+		"hint": "Search..."
+	},
+	"paginator": {
+		"first": "Go to first page.",
+		"previous": "Go to previous page.",
+		"next": "Go to next page.",
+		"last": "Go to last page.",
+		"go": "Go"
+	},
+	"appBar": {
+		"changeIcon": "Change Icon",
+		"changeName": "Change Name",
+		"changePassword": "Change Password",
+		"exit": "Exit"
+	},
+	"drawerUi": {
+		"title": "Hello",
+		"home": "Home",
+		"accounts": "Accounts",
+		"settings": "Settings",
+		"exit": "Exit"
+	},
+	"beginPage": {
+		"title": "Moonville",
+		"email": "Email",
+		"password": "Password",
+		"remember": "Remember Login",
+		"forgotPassword": "Forgot password?",
+		"ok": "Login",
+		"or": "- or -",
+		"signUp": "Sign Up",
+		"signInGoogle": "Sign-in to Google",
+		"signInFacebook": "Sign-in to Facebook",
+		"signInLine": "Sign-in to LINE"
+	},
+	"signUpPage": {
+		"title": "Sign Up",
+		"email": "Email",
+		"password": "Password",
+		"confirmPassword": "Confirm Password",
+		"ok": "Register",
+		"confirm": "Please confirm the signup by email!"
+	},
+	"forgotPasswordPage": {
+		"title": "Forgot Password",
+		"email": "Email",
+		"ok": "Send Email",
+		"check": "Please check email for your instruction!"
+	},
+	"dashboardPage": {
+		"title": "Dashboard",
+		"role": "Role",
+		"name": "Name",
+		"locale": "Locale",
+		"signup": "Signup"
+	},
+	"changeIconPage": {
+		"title": "Change Icon",
+		"icon": "Current Icon",
+		"ok": "Change Icon"
+	},
+	"changeNamePage": {
+		"title": "Change Current Name",
+		"name": "Current Name",
+		"ok": "Change Name"
+	},
+	"changePasswordPage": {
+		"title": "Change Current Password",
+		"password": "Password",
+		"confirmPassword": "Confirm Password",
+		"ok": "Change Password",
+		"confirm": "You have to logout, then login again with new password!"
+	},
+	"accountsPage": {
+		"title": "Accounts",
+		"sortBy": {
+			"id": "Id",
+			"emailAsc": "Email ASC",
+			"emailDesc": "Email DESC",
+			"signUpAsc": "Signup ASC",
+			"signUpDesc": "Signup DESC"
+		},
+		"trash": "Resigned"
+	},
+	"accountEditPage": {
+		"title": "Edit {{name}}",
+		"role": "Role",
+		"name": "Name",
+		"locale": "Locale",
+		"disabled": "Disabled",
+		"resigned": "Resigned",
+		"signup": "Signup",
+		"disable": "Disable",
+		"ok": "Save"
+	},
+	"settingsPage": {
+		"title": "Settings",
+		"locale": "Change Locale",
+		"color": "Change Color Theme"
+	},
+	"waitForSessionLoaded": {
+		"title": "Now Loading..."
+	},
+	"authenRequired": {
+		"title": "Session Expired",
+		"back": "Click here to go to back to home page"
+	},
+	"signInExternal": {
+		"title": "Now Loading...",
+		"click": "Try Login Again"
+	}
+}
