@@ -63,12 +63,12 @@ class _AccountsState extends State<AccountsPage> {
     super.initState();
     _initTimer = Timer(const Duration(), _handleInit);
     _loadTimer = null;
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     _loadTimer?.cancel();
     _initTimer.cancel();
     super.dispose();
@@ -222,11 +222,11 @@ class _AccountsState extends State<AccountsPage> {
 
     // get result
     final list = rest.json['users'];
-    log.finer('find all, count: ${list.length}');
+    log.finer("find all, count: ${list.length}");
     items.clear();
     for (var i = 0; i < list.length; i++) {
       final item = models.AccountUser.fromJson(list[i]);
-      log.finer('#$i: $item');
+      log.finer("#$i: $item");
       items.add(item);
     }
 
@@ -234,7 +234,7 @@ class _AccountsState extends State<AccountsPage> {
     final paginate = rest.json['paginate'];
     _pageIndex = paginate['pageIndex'];
     _pageCount = paginate['pageCount'];
-    log.finer('page: ${_pageIndex + 1}/$_pageCount');
+    log.finer("page: ${_pageIndex + 1}/$_pageCount");
 
     // refresh UI
     setState(() {});

@@ -35,12 +35,12 @@ class _AccountEditState extends State<AccountEditPage> {
   void initState() {
     super.initState();
     _isDisabled = widget.item.disabled != null;
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     super.dispose();
   }
 
@@ -201,7 +201,7 @@ class _AccountEditState extends State<AccountEditPage> {
 
     // get result
     final item = models.AccountUser.fromJson(rest.json['user']);
-    log.finer('user: $item');
+    log.finer("user: $item");
 
     // update client user
     client.update(item);

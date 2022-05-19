@@ -46,12 +46,12 @@ class _BeginState extends State<BeginPage> {
     _obscurePassword = true;
     _isRememberChecked = false;
     _initTimer = Timer(const Duration(), _handleInit);
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     _initTimer.cancel();
     _passwordText.dispose();
     _emailText.dispose();
@@ -262,7 +262,7 @@ class _BeginState extends State<BeginPage> {
 
     // get result
     final item = models.AccountUser.fromJson(rest.json['user']);
-    log.finer('user: $item');
+    log.finer("user: $item");
 
     // perform login task
     AppShared.instance().login(context, item, rest.json['token']);
@@ -294,22 +294,22 @@ class _BeginState extends State<BeginPage> {
       {
         final res = await http.get(Embed.uri(''));
         log.finer(
-            '${res.request?.method} ${res.request?.url} ${res.statusCode}');
-        log.finer('body: ${res.body}');
+            "${res.request?.method} ${res.request?.url} ${res.statusCode}");
+        log.finer("body: ${res.body}");
       }
 
       {
         final res = await http.post(Embed.uri('echo/ECHO'));
         log.finer(
-            '${res.request?.method} ${res.request?.url} ${res.statusCode}');
-        log.finer('body: ${res.body}');
+            "${res.request?.method} ${res.request?.url} ${res.statusCode}");
+        log.finer("body: ${res.body}");
       }
 
       {
         final res = await http.post(Embed.uri(''));
         log.finer(
-            '${res.request?.method} ${res.request?.url} ${res.statusCode}');
-        log.finer('body: ${res.body}');
+            "${res.request?.method} ${res.request?.url} ${res.statusCode}");
+        log.finer("body: ${res.body}");
       }
     }
 
@@ -354,7 +354,7 @@ class _BeginState extends State<BeginPage> {
 
         // get result
         final item = models.AccountUser.fromJson(rest.json['user']);
-        log.finer('user: $item');
+        log.finer("user: $item");
 
         // perform login task
         AppShared.instance().login(context, item, rest.json['token']);

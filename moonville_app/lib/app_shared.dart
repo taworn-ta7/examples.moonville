@@ -57,7 +57,7 @@ class AppShared {
 
     if (_indexLocale != i) {
       _indexLocale = i;
-      log.info('change locale to $locale');
+      log.info("change locale to $locale");
       LocaleSettings.setLocaleRaw(locale);
       App.refresh(context);
     }
@@ -99,7 +99,7 @@ class AppShared {
 
     if (_indexTheme != index) {
       _indexTheme = index;
-      log.info('change theme to $_indexTheme');
+      log.info("change theme to $_indexTheme");
 
       App.refresh(context);
     }
@@ -126,7 +126,7 @@ class AppShared {
     // set user settings
     changeLocale(context, client.user!.locale);
     changeTheme(context, client.user!.theme);
-    log.info('login to system, welcome :)');
+    log.info("login to system, welcome :)");
   }
 
   /// Logout task.
@@ -146,7 +146,7 @@ class AppShared {
     // move out to first page
     Navigator.popUntil(context, (route) => route.isFirst);
     changeTheme(context, 0);
-    log.info('logout from system gracefully :)');
+    log.info("logout from system gracefully :)");
 
     // logout logic
     client.logout();

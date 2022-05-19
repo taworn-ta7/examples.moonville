@@ -11,8 +11,8 @@ class EchoEmbed {
 
   Response echo(Request request) {
     final message = request.params['message'];
-    debugLog.d('echo request: $message');
-    log.finer('echo request: $message');
-    return Response.ok('$message\n');
+    debugLog.d("echo request: $message");
+    log.finer("echo request: $message");
+    return Response.ok("$message\n");
   }
 }

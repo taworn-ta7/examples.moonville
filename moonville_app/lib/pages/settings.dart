@@ -24,12 +24,12 @@ class _SettingsState extends State<SettingsPage> {
   @override
   void initState() {
     super.initState();
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     super.dispose();
   }
 
@@ -152,7 +152,7 @@ class _SettingsState extends State<SettingsPage> {
 
     // get result
     final item = models.AccountUser.fromJson(rest.json['user']);
-    log.finer('user: $item');
+    log.finer("user: $item");
 
     // update client user
     client.update(item);
@@ -190,7 +190,7 @@ class _SettingsState extends State<SettingsPage> {
 
     // get result
     final item = models.AccountUser.fromJson(rest.json['user']);
-    log.finer('user: $item');
+    log.finer("user: $item");
 
     // update client user
     client.update(item);

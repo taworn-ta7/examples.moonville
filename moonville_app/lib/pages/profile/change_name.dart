@@ -32,12 +32,12 @@ class _ChangeNameState extends State<ChangeNamePage> {
   void initState() {
     super.initState();
     _nameText = TextEditingController(text: shared.client.user!.name);
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     _nameText.dispose();
     super.dispose();
   }
@@ -140,7 +140,7 @@ class _ChangeNameState extends State<ChangeNamePage> {
 
     // get result
     final item = models.AccountUser.fromJson(rest.json['user']);
-    log.finer('user: $item');
+    log.finer("user: $item");
 
     // update client user
     client.update(item);

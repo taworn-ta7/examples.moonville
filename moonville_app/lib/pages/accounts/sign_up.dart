@@ -40,12 +40,12 @@ class _SignUpState extends State<SignUpPage> {
     _confirmPasswordText = TextEditingController();
     _obscurePassword = true;
     _obscureConfirmPassword = true;
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     _confirmPasswordText.dispose();
     _passwordText.dispose();
     _emailText.dispose();
@@ -204,7 +204,7 @@ class _SignUpState extends State<SignUpPage> {
 
     // get result
     final item = rest.json['user'];
-    log.finer('signup: $item');
+    log.finer("signup: $item");
 
     // remind user to confirm signup
     await MessageBox.info(context, t.signUpPage.confirm);

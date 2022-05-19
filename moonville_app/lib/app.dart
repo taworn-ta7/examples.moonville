@@ -28,12 +28,12 @@ class _AppState extends State<App> {
   @override
   void initState() {
     super.initState();
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     super.dispose();
   }
 

@@ -13,7 +13,7 @@ void main() async {
   Logger.root.onRecord.listen(
     // ignore: avoid_print
     (record) => print(
-      '${record.time} ${record.level.name.padRight(7)} ${record.loggerName.padRight(12).characters.take(12)} ${record.message}',
+      "${record.time} ${record.level.name.padRight(7)} ${record.loggerName.padRight(12).characters.take(12)} ${record.message}",
     ),
   );
 

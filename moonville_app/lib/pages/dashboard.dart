@@ -22,12 +22,12 @@ class _DashboardState extends State<DashboardPage> {
   @override
   void initState() {
     super.initState();
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     super.dispose();
   }
 

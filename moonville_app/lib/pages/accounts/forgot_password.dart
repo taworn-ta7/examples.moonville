@@ -37,12 +37,12 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
   void initState() {
     super.initState();
     _emailText = TextEditingController(text: widget.email);
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     _emailText.dispose();
     super.dispose();
   }
@@ -137,7 +137,7 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
 
     // get result
     final item = rest.json['user'];
-    log.finer('reset: $item');
+    log.finer("reset: $item");
 
     // remind user to confirm signup
     await MessageBox.info(context, t.forgotPasswordPage.check);

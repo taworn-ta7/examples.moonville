@@ -23,7 +23,7 @@ class Embed {
     final ip = InternetAddress.anyIPv4;
     const _port = 8080;
     final server = await serve(handler, ip, _port);
-    log.info('embed server listening on port ${server.port}');
+    log.info("embed server listening on port ${server.port}");
 
     port = server.port;
     host = 'http://127.0.0.1:$_port';

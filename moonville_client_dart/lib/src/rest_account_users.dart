@@ -55,7 +55,7 @@ class RestAccountUsers {
 
     // get result
     final item = models.AccountUser.fromJson(rest.json['user']);
-    log.finer('user: $item');
+    log.finer("user: $item");
     return RestWithData(rest: rest, data: item);
   }
 

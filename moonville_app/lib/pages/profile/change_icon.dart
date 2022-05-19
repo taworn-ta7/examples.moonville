@@ -36,12 +36,12 @@ class _ChangeIconState extends State<ChangeIconPage> {
     super.initState();
     _imageEditing = false;
     _imageFile = null;
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     super.dispose();
   }
 
@@ -126,7 +126,7 @@ class _ChangeIconState extends State<ChangeIconPage> {
     // call REST
     if (_imageEditing) {
       if (_imageFile != null) {
-        log.finest('image upload');
+        log.finest("image upload");
         final RestResult? rest = await ServiceRunner.execute(
           context,
           () async {
@@ -161,7 +161,7 @@ class _ChangeIconState extends State<ChangeIconPage> {
         if (rest == null) return;
         client.user?.icon = _imageFile!.bytes!;
       } else {
-        log.finest('image reset');
+        log.finest("image reset");
         final RestResult? rest = await ServiceRunner.execute(
           context,
           () async {

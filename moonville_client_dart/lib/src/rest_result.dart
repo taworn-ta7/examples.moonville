@@ -31,16 +31,16 @@ class RestResult {
         errorMessage = null;
       } else {
         error = null;
-        errorMessage = 'unknown error!';
+        errorMessage = "unknown error!";
       }
     }
 
     final req = res!.request!;
-    final prefix = '${req.method} ${req.url}';
+    final prefix = "${req.method} ${req.url}";
     if (!ok) {
-      log.warning('$prefix: $error');
+      log.warning("$prefix: $error");
     } else {
-      log.info('$prefix: ${res!.statusCode} ${res!.reasonPhrase}');
+      log.info("$prefix: ${res!.statusCode} ${res!.reasonPhrase}");
     }
   }
 

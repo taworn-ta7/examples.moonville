@@ -30,7 +30,7 @@ class Client {
     bool noLog = false,
   }) {
     final json = _formatter.convert(data);
-    if (!noLog) log.finer('JSON: $json');
+    if (!noLog) log.finer("JSON: $json");
     return json;
   }
 
@@ -39,7 +39,7 @@ class Client {
     var params = Uri(queryParameters: query).query;
     if (params != '') params = '?$params';
     final uri = Uri.parse('$baseUri$address$params');
-    log.finer('URI: $uri');
+    log.finer("URI: $uri");
     return uri;
   }
 

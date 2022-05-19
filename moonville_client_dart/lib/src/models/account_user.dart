@@ -92,5 +92,5 @@ class AccountUser {
 
   @override
   String toString() =>
-      '$id [$role] $email, locale=$locale, theme=$theme, login=$begin';
+      "$id [$role] $email, locale=$locale, theme=$theme, login=$begin";
 }

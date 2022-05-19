@@ -37,12 +37,12 @@ class _ChangePasswordState extends State<ChangePasswordPage> {
     _confirmPasswordText = TextEditingController();
     _obscurePassword = true;
     _obscureConfirmPassword = true;
-    log.fine('$this initState()');
+    log.fine("$this initState()");
   }
 
   @override
   void dispose() {
-    log.fine('$this dispose()');
+    log.fine("$this dispose()");
     _confirmPasswordText.dispose();
     _passwordText.dispose();
     super.dispose();

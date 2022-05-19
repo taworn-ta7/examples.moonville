@@ -10,6 +10,6 @@ class RootEmbed {
   // ----------------------------------------------------------------------
 
   static Response root(Request req) {
-    return Response.ok('Hello, world :)');
+    return Response.ok("Hello, world :)");
   }
 }

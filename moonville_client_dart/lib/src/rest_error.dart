@@ -19,7 +19,7 @@ class RestError {
       };
 
   @override
-  String toString() => '$status $message; ref=$ref';
+  String toString() => "$status $message; ref=$ref";
 
   // ----------------------------------------------------------------------
 
