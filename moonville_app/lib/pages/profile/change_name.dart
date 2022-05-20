@@ -48,12 +48,12 @@ class _ChangeNameState extends State<ChangeNamePage> {
   @override
   Widget build(BuildContext context) {
     final tr = t.changeNamePage;
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: tr.title,
-      ),
-      body: WillPopScope(
-        child: Form(
+    return WillPopScope(
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title: tr.title,
+        ),
+        body: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Styles.around(
@@ -92,8 +92,8 @@ class _ChangeNameState extends State<ChangeNamePage> {
             ),
           ),
         ),
-        onWillPop: _beforeBack,
       ),
+      onWillPop: _beforeBack,
     );
   }
 

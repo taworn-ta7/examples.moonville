@@ -21,7 +21,7 @@ import {
 import {
 	ArrowBack as BackIcon,
 	Menu as MenuIcon,
-	DirectionsRailway as MainIcon,
+	DarkMode as MainIcon,
 	Search as SearchIcon,
 	Home as HomeIcon,
 	AccountBox as AccountsIcon,
